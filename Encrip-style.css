@@ -1,0 +1,124 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #000000;
+}
+h1 {
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+.neon {
+    font-size: 5em;
+	color: #fff;
+	margin-top: 2%;
+	text-shadow:
+		0 0 5px rgba(0,178,255,1),
+		0 0 10px rgba(0,178,255,1),
+		0 0 20px rgba(0,178,255,1),
+		0 0 40px rgba(38,104,127,1),
+		0 0 80px rgba(38,104,127,1),
+		0 0 90px rgba(38,104,127,1),
+		0 0 100px rgba(38,104,127,1),
+		0 0 140px rgba(38,104,127,1),
+		0 0 180px rgba(38,104,127,1);
+}
+
+header p{
+    margin-top: 2%;
+    font-size: 0.9em;
+    color:aliceblue;
+    text-align: center;
+    padding-bottom: 1em;
+}
+/*Ingrese solo letras minusculas*/
+.cajasdetextoingreso p{
+    font-size: 1.5em;
+    color:aliceblue;
+    text-align: center;
+    margin: 0 auto;
+    padding: top 1em;
+    padding-bottom: 1em;
+}
+.input{
+    position: absolute;
+    width: 50em;
+    height: 20%;
+    left: 10em;
+    top: 40%;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-color: #6c4675;
+    background: #fff;
+}
+.output{
+    position: absolute;
+    width: 50em;
+    height: 20%;
+    right: 10em;
+    top: 65%;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background:#fff;
+}
+.buton{
+    width: auto;
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    background: #000000;
+    border-color:#6c4675;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+.buton:hover{
+    background-color:#6c4675;
+    box-shadow: 0 0 10px #6c4675, 0 0 40px #6c4675, 0 0 80px #6c4675;
+    transition-delay: 1ms;
+}
+footer{
+    padding: 350px;
+    padding-left:1%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+}
+
+@media screen and (max-width:480px){
+    h1{
+        text-align: center;
+    }
+    .buton, .output, .input{
+        width: auto;
+    }
+    .footer{
+        padding-left:1%;
+        font-size: 15px;
+    }
+    .output{
+        width: 20em;
+        height: 5em;
+        top: 25em;
+        left:auto;
+        right:auto;
+    }
+    .input{
+        width: 20em;
+        height: 5em;
+        top: 35em;
+        left:auto;
+        right:auto;
+    }
+
+}

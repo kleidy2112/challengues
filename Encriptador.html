@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width"> 
+        <title>DES-ENCRIP-TADOR</title>
+        <link rel="stylesheet" href="Parte 2/reset.css">
+        <link rel="stylesheet" href="Encrip-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <header>
+                <h1 class="neon">DES-ENCRIP-TADOR</h1>
+                <p>Alura Challenge</p>
+            </header>
+            
+
+            <div class="cajasdetextoingreso">
+
+                <p>Ingrese solo letras minúsculas, sin acentos ni carácteres especiales</p>
+                
+                <textarea class="input" id="textoingresa" placeholder="Ingrese texto a transformar" onchange="traertexto()"></textarea>
+
+                <textarea class="output" id="onTexto" placeholder="Texto encriptado" readonly></textarea>
+
+                <textarea class="output" id="offTexto"  placeholder="No tenemos texto" readonly></textarea>
+
+            </div>
+            <div>
+                <center>
+                <button class="buton" id="botonEncriptar" onclick="encriptar()">Encriptar</button>
+
+                <button class="buton" id="botonDesencriptar" onclick="desencriptar()">Desencriptar</button>
+
+                <button class="buton"onclick="copyToClipBoard()">Copy</button>
+                </center>
+            </div>
+
+            <script>
+                traertexto()
+                function traertexto() {
+                    var copiartexto = document.querySelector('#copiartexto')
+                    var textosale = document.getElementById('onTexto')
+                    var offTexto = document.getElementById('offTexto')
+                    var textoingresa = document.getElementById('textoingresa').value
+                   //Condicionales para celda vacía 
+                    if(textoingresa == '') {
+                        textosale.style.display = 'none'
+                        offTexto.style.display = 'block'
+                        copiartexto.disabled = true;
+                    } 
+                    else {
+                        textosale.style.display = 'block'
+                        offTexto.style.display = 'none'
+                        copiartexto.disabled = false;
+                    }
+                }
+
+                function encriptar() {
+                    var textoingresa = document.getElementById('textoingresa').value
+                    var encriptado = textoingresa.replace(/e/g, 'enter').replace(/i/g, 'imes').replace(/a/g, 'ai').replace(/o/g, 'ober').replace(/u/g, 'ufat')
+                    var textosale = document.getElementById('onTexto')
+                    textosale.value = encriptado
+                }
+
+                function desencriptar() {
+                    var textoingresa = document.getElementById('textoingresa').value
+                    var desencriptado = textoingresa.replace(/enter/g, 'e').replace(/imes/g, 'i').replace(/ai/g, 'a').replace(/ober/g, 'o').replace(/ufat/g, 'u')
+                    var textosale = document.getElementById('onTexto')
+                    textosale.value = desencriptado
+                }
+
+                function copyToClipBoard() {
+                    
+                    var content=document.getElementById('onTexto')
+
+                    content.select();
+                    document.execCommand('copy');
+                    alert('Copiaste el texto');
+                }
+
+            </script>
+
+        </main>
+        <footer>
+            <h2>Challenge ONE de Lógica de Programación</h2>
+            <p>Autor: Kleidy Magdany Iraheta Palma</p>
+            <br>
+            <p><a href="https://github.com/kleidy2112">GitHub</a></p>
+        </footer>
+    </body>
+</html>
